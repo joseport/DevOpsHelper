@@ -1,36 +1,95 @@
-# DevOpsHelper README
+# DevOpsHelper
 
-DevOpsHelper is a Visual Studio Code extension designed to streamline the management of Azure DevOps work items. By integrating directly into your VS Code environment, DevOpsHelper offers an efficient way to view, organize, and interact with work items without leaving your editor. This extension provides a hierarchical view of projects, work item types, and individual work items, making it easier to navigate and manage your Azure DevOps tasks. Customizable through VS Code settings, DevOpsHelper requires users to configure a Personal Access Token (PAT) and their Azure DevOps account email to fetch and display relevant work items. Enhance your productivity and simplify your DevOps workflow with DevOpsHelper.
+A Visual Studio Code extension that integrates Azure DevOps work items directly into your editor. Stay on top of your tasks without context switching.
 
 ## Features
 
-Display work items categorized by projects and types.
-
-Easy access to work item details including state, tags, and descriptions.
+- **Hierarchical Work Item View**: Browse your assigned work items organized by Project → Work Item Type → Individual Items
+- **Work Item Details**: View important information like state and tags directly in the tree view
+- **Custom Work Item Icons**: Visual indicators for different work item types (Bug, Task, Feature, Epic, User Story)
+- **One-Click Access**: Open any work item in your browser with a single click
+- **Auto-Refresh**: Loads your work items when the extension activates
+- **Manual Refresh**: Update your work items list on demand
 
 ## Requirements
 
-To use DevOpsHelper, you must have an Azure DevOps account and a Personal Access Token (PAT) with appropriate permissions to access work items.
+- Visual Studio Code 1.60.0 or higher
+- An active Azure DevOps account
+- A Personal Access Token (PAT) with Work Item and Analytics permissions
 
-## Extension Settings
+## Installation
 
-DevOpsHelper requires configuration of the following settings via VS Code's settings:
+1. Install from the Visual Studio Code Marketplace
+2. Or download the .vsix file and install manually
 
-* `devops-helper.PAT`: Your Personal Access Token for Azure DevOps. This token is used to authenticate and authorize your requests. PAT must have Analytics permissions.
+## Setup
 
-* `devops-helper.email`: The email associated with your Azure DevOps account. This is used to filter work items assigned to you.
+Before using DevOpsHelper, you need to configure the following settings:
 
-* `devops-helper.organization`: The name of your Azure DevOps organization
+1. Open VS Code settings (File > Preferences > Settings)
+2. Search for "DevOps Helper"
+3. Fill in the following required fields:
+   - **PAT**: Your Azure DevOps Personal Access Token (must have Analytics permissions)
+   - **Email**: Your Azure DevOps account email address
+   - **Organization**: Your Azure DevOps organization name
 
-To configure these settings, go to VS Code's Settings (Ctrl+, or Cmd+, on macOS), search for "DevOpsHelper", and fill in your PAT and email accordingly.
+```json
+{
+  "devops-helper.PAT": "your-personal-access-token",
+  "devops-helper.email": "your-email@example.com",
+  "devops-helper.organization": "your-organization-name"
+}
+```
+
+## Usage
+
+Once configured:
+
+1. Click the DevOpsHelper icon in the Activity Bar
+2. Your assigned work items will load automatically, organized by project and work item type
+3. Click on a project to see work item types
+4. Click on a work item type to see individual items
+5. Click on an individual work item to open it in your browser
+6. Use the refresh button to update the work item list
+
+### Available Commands
+
+- **DevOpsHelper: Refresh Work Item List** - Manually refresh your work items
+
+## Work Item Filtering
+
+The extension automatically filters work items to show only:
+- Items assigned to your email address
+- Non-closed, non-resolved, and non-removed items
+- Items that are not of type "Development"
+
+## Customization
+
+DevOpsHelper uses custom icons for different work item types:
+- Bug
+- Feature
+- Task
+- Epic
+- User Story
+- Default (for other types)
 
 ## Known Issues
 
+None reported yet. Please submit issues on the GitHub repository.
+
+## Privacy
+
+Your PAT and other credentials are stored in VS Code's secure storage and are only used to authenticate with Azure DevOps.
 
 ## Release Notes
 
 ### 1.0.0
 
-Initial release of DevOpsHelper.
+- Initial release
+- Hierarchical view of work items by project and type
+- Direct access to work item details
+- Custom icons for different work item types
+
+---
 
 **Enjoy!**
