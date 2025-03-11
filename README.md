@@ -92,4 +92,9 @@ Your PAT and other credentials are stored in VS Code's secure storage and are on
 
 ---
 
+
+## License
+
+This extension is licensed under the MIT License.
+
 **Enjoy!**
