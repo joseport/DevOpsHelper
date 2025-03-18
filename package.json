@@ -5,6 +5,10 @@
   "publisher": "jtavares",
   "icon": "media/AppIcon.jpg",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joseport/DevOpsHelper.git"
+  },
   "engines": {
     "vscode": "^1.86.0"
   },
